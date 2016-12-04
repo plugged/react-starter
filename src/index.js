@@ -15,7 +15,7 @@ if (module.hot) {
   module.hot.accept('./App', () => {
     ReactDOM.render(
       <AppContainer>
-         <App />
+        <App />
       </AppContainer>,
       rootEl
     );
