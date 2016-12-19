@@ -1,16 +1,14 @@
-import React, { PropTypes, Component } from 'react';
+import React, { PropTypes } from 'react';
 
-export default class Layout extends Component {
-  static propTypes = {
-    children: PropTypes.node.isRequired,
-  };
+const Layout = ({ children }) => (
+  <div>
+    <h1>Hello, world!</h1>
+    {children}
+  </div>
+);
 
-  render() {
-    return (
-      <div>
-        <h1>Hello, world!</h1>
-        {this.props.children}
-      </div>
-    );
-  }
-}
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Layout;
