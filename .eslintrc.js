@@ -26,6 +26,7 @@ module.exports = {
     'quotes': [ERROR, 'single', {avoidEscape: true, allowTemplateLiterals: true }],
     'strict': [ERROR, 'never'],
     'indent': [ERROR, 2, {'SwitchCase': 1}],
+    'object-curly-spacing': OFF,
     'import/no-extraneous-dependencies': OFF,
     //'func-names': OFF,
     'react/prefer-stateless-function': OFF,

@@ -1,8 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-// const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -19,24 +17,26 @@ module.exports = {
   plugins: [
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin()
+    new webpack.NoErrorsPlugin(),
+    new webpack.LoaderOptionsPlugin({
+      debug: true,
+      options: {
+        context: __dirname,
+        postcss: [
+          autoprefixer({browsers: 'last 2 versions'}),
+        ],
+      },
+    }),
   ],
   module: {
-    loaders: [
-      {
-        test: /\.jsx?$/,
-        loaders: ['babel-loader'],
-        include: path.join(__dirname, 'src')
-      },
-      {
-        test: /\.scss$/,
-        exclude: path.join(__dirname, 'src', 'app'),
-        loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
-        // loader: isProd ? ExtractTextPlugin.extract({
-        //   fallbackLoader: 'style-loader',
-        //   loader: 'css?sourceMap!postcss'
-        // }) : 'style!css?sourceMap!postcss'
-      }
-    ]
+    loaders: [{
+      test: /\.jsx?$/,
+      loaders: ['babel-loader'],
+      include: path.join(__dirname, 'src')
+    }, {
+      test: /\.scss$/,
+      exclude: path.join(__dirname, 'src', 'app'),
+      loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
+    }]
   }
 };

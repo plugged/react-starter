@@ -13,6 +13,9 @@ const compiler = webpack(config);
 app.use(devMiddleware(compiler, {
   publicPath: config.output.publicPath,
   historyApiFallback: true,
+  stats: {
+    colors: true
+  }
 }));
 
 app.use(hotMiddleware(compiler));
