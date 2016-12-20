@@ -1,8 +1,10 @@
 # react-starter
 
-todo:
+###todo:
 
-dll
-redux
-sass
-router
+- [ ] dll
+- [ ] redux
+- [x] sass
+- [x] autoprefixer
+- [ ] router
+- [ ] jest

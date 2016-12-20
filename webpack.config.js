@@ -29,9 +29,9 @@ module.exports = {
         include: path.join(__dirname, 'src')
       },
       {
-        test: /\.css$/,
+        test: /\.scss$/,
         exclude: path.join(__dirname, 'src', 'app'),
-        loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader']
+        loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
         // loader: isProd ? ExtractTextPlugin.extract({
         //   fallbackLoader: 'style-loader',
         //   loader: 'css?sourceMap!postcss'
