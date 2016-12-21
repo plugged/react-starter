@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const HappyPack = require('happypack');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -30,11 +31,16 @@ module.exports = {
         ],
       },
     }),
+    new HappyPack({
+      id: 'babel',
+      loaders: ['babel-loader']
+    })
   ],
   module: {
     loaders: [{
       test: /\.jsx?$/,
-      loaders: ['babel-loader'],
+      loader: 'babel-loader',
+      // loader: 'happypack/loader?id=babel', // todo
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,
