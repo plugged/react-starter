@@ -18,6 +18,9 @@ module.exports = {
     new webpack.optimize.OccurrenceOrderPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
+    new webpack.ProgressPlugin({
+      profile: true
+    }),
     new webpack.LoaderOptionsPlugin({
       debug: true,
       options: {

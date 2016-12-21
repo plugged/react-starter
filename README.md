@@ -2,11 +2,13 @@
 
 ###todo:
 
-- [ ] dll
-- [ ] happypack
-- [ ] redux
 - [x] sass
 - [x] autoprefixer
-- [ ] router
-- [ ] jest
+- [x] progress
+- [ ] happypack
+- [ ] dll
 - [ ] build config
+
+- [ ] router
+- [ ] redux
+- [ ] jest
