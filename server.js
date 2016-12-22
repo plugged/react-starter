@@ -11,14 +11,19 @@ const app = express();
 const compiler = webpack(config);
 
 app.use(devMiddleware(compiler, {
-  publicPath: config.output.publicPath,
+  publicPath: '/',
   historyApiFallback: true,
+  contentBase: path.join(__dirname, 'src'),
   stats: {
     colors: true
   }
 }));
 
 app.use(hotMiddleware(compiler));
+
+app.get('/dll/vendor.js', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'dll', 'vendor.js'));
+});
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));

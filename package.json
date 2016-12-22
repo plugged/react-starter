@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "description": "React starter",
   "scripts": {
+    "postinstall": "yarn run build:dll",
     "start": "node server.js",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "clean:dll": "rimraf -- src/dll",
+    "build:dll": "yarn run clean:dll && webpack --config webpack.dll.js"
   },
   "main": "index.js",
   "repository": {
@@ -39,9 +42,11 @@
     "happypack": "^3.0.1",
     "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
-    "sass-loader": "^4.1.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.25",
+    "webpack-bundle-analyzer": "^2.2.0",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-hot-middleware": "^2.13.2"
   }

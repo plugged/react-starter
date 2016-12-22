@@ -6,7 +6,8 @@
 - [x] autoprefixer
 - [x] progress
 - [ ] happypack
-- [ ] dll
+- [x] dll
+- [ ] bundle analyzer
 - [ ] build config
 
 - [ ] router
