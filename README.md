@@ -7,7 +7,7 @@
 - [x] progress
 - [ ] happypack
 - [x] dll
-- [ ] bundle analyzer
+- [x] bundle analyzer
 - [ ] build config
 
 - [ ] router

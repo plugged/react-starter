@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "yarn run build:dll",
     "start": "node server.js",
+    "start:analyze": "node server.js",
     "lint": "eslint .",
     "clean:dll": "rimraf -- src/dll",
     "build:dll": "yarn run clean:dll && webpack --config webpack.dll.js"
@@ -24,7 +25,7 @@
     "redux": "^3.6.0"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.4",
+    "autoprefixer": "^6.6.0",
     "babel-core": "^6.21.0",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
@@ -46,8 +47,8 @@
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.1.0-beta.25",
-    "webpack-bundle-analyzer": "^2.2.0",
+    "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.9.0",
-    "webpack-hot-middleware": "^2.13.2"
+    "webpack-hot-middleware": "^2.14.0"
   }
 }

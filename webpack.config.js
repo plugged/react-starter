@@ -3,7 +3,10 @@ const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 // const HappyPack = require('happypack');
 const vendorManifest = require('./src/dll/vendor-manifest.json');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+const ENV = process.env.npm_lifecycle_event;
+const runAnalyzer = ENV.includes('analyze');
 
 module.exports = {
   devtool: 'cheap-module-eval-source-map',
@@ -18,7 +21,6 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    // new BundleAnalyzerPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoErrorsPlugin(),
     new webpack.ProgressPlugin({
@@ -41,7 +43,7 @@ module.exports = {
       context: __dirname,
       manifest: vendorManifest
     })
-  ],
+  ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
     loaders: [{
       test: /\.jsx?$/,

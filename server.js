@@ -21,8 +21,8 @@ app.use(devMiddleware(compiler, {
 
 app.use(hotMiddleware(compiler));
 
-app.get('/dll/vendor.js', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'dll', 'vendor.js'));
+app.get('/dll/:filename', (req, res) => {
+  res.sendFile(path.join(__dirname, 'src', 'dll', req.params.filename));
 });
 
 app.get('*', (req, res) => {
