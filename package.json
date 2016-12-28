@@ -7,8 +7,11 @@
     "start": "node server.js",
     "start:analyze": "node server.js",
     "lint": "eslint .",
+    "build": "yarn run clean:build && webpack --config webpack.build.js",
+    "build:analyze": "yarn run clean:build && webpack --config webpack.build.js",
+    "build:dll": "yarn run clean:dll && webpack --config webpack.dll.js",
     "clean:dll": "rimraf -- src/dll",
-    "build:dll": "yarn run clean:dll && webpack --config webpack.dll.js"
+    "clean:build": "rimraf -- build"
   },
   "main": "index.js",
   "repository": {
@@ -46,7 +49,7 @@
     "rimraf": "^2.5.4",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
-    "webpack": "^2.1.0-beta.25",
+    "webpack": "^2.1.0-beta.28",
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.9.0",
     "webpack-hot-middleware": "^2.14.0"

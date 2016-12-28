@@ -8,7 +8,7 @@
 - [ ] happypack
 - [x] dll
 - [x] bundle analyzer
-- [ ] build config
+- [x] build config
 
 - [ ] router
 - [ ] redux
