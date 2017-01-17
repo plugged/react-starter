@@ -46,7 +46,7 @@ module.exports = {
         comments: false,
         screw_ie8: true
       },
-      sourceMap: false
+      sourceMap: true
     }),
     // new webpack.ProgressPlugin({
     //   profile: true
