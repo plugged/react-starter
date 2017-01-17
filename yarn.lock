@@ -3066,8 +3066,8 @@ oauth-sign@~0.8.1:
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
 object-assign@^4.0.1, object-assign@^4.1.0:
-  version "4.1.0"
-  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
 
 object-keys@^1.0.8:
   version "1.0.11"
@@ -4107,8 +4107,8 @@ stream-browserify@^2.0.1:
     readable-stream "^2.0.2"
 
 stream-http@^2.3.1:
-  version "2.6.1"
-  resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-2.6.1.tgz#7d20fcdfebc16b16e4174e31dd94cd9c70f10e89"
+  version "2.6.2"
+  resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-2.6.2.tgz#bdfe40d2ee9262eb6bf2255bb3ad0ec0cdd6526d"
   dependencies:
     builtin-status-codes "^3.0.0"
     inherits "^2.0.1"
@@ -4455,9 +4455,9 @@ webpack-sources@^0.1.0, webpack-sources@^0.1.4:
     source-list-map "~0.1.7"
     source-map "~0.5.3"
 
-webpack@^2.2.0-rc.6:
-  version "2.2.0-rc.6"
-  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.2.0-rc.6.tgz#aa503ba64802143ff067920e4a376c83005ee3fe"
+webpack@^2.2.0-rc.7:
+  version "2.2.0-rc.7"
+  resolved "https://registry.yarnpkg.com/webpack/-/webpack-2.2.0-rc.7.tgz#08199749827fe2c21e2ddeb1615893b2b6dde40a"
   dependencies:
     acorn "^4.0.4"
     acorn-dynamic-import "^2.0.0"
