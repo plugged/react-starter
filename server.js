@@ -21,6 +21,8 @@ app.use(devMiddleware(compiler, {
 
 app.use(hotMiddleware(compiler));
 
+app.use(express.static(path.join(__dirname, 'public')));
+
 app.get('/dll/:filename', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'dll', req.params.filename));
 });

@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const ENV = process.env.npm_lifecycle_event;
@@ -19,6 +20,9 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
+    new CopyWebpackPlugin([
+      {from: 'public'}
+    ]),
     new webpack.DefinePlugin({
       'process.env': {
         NODE_ENV: JSON.stringify('production')
@@ -34,7 +38,9 @@ module.exports = {
       },
       compress: {
         screw_ie8: true,
-        warnings: false
+        warnings: false,
+        unused: true,
+        dead_code: true
       },
       output: {
         comments: false,

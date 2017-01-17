@@ -9,9 +9,8 @@
 - [x] dll
 - [x] bundle analyzer
 - [x] build config
-- [ ] public
-- [ ] structure
-
+- [x] public
+- [ ] structure<br><br>
 - [ ] router
 - [ ] redux
 - [ ] jest
