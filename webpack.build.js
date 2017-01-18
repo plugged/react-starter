@@ -9,7 +9,7 @@ const ENV = process.env.npm_lifecycle_event;
 const runAnalyzer = ENV.includes('analyze');
 
 module.exports = {
-  devtool: 'cheap-module-source-map',
+  devtool: 'source-map',
   entry: {
     application: './src/index',
     vendor: ['react', 'react-dom', 'react-redux', 'redux']
@@ -28,7 +28,6 @@ module.exports = {
         NODE_ENV: JSON.stringify('production')
       }
     }),
-    new webpack.NoErrorsPlugin(),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
     new webpack.optimize.UglifyJsPlugin({
@@ -48,9 +47,9 @@ module.exports = {
       },
       sourceMap: true
     }),
-    // new webpack.ProgressPlugin({
-    //   profile: true
-    // }),
+    new webpack.ProgressPlugin({
+      profile: true
+    }),
     new webpack.LoaderOptionsPlugin({
       minimize: true,
       debug: false,
