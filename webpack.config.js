@@ -45,7 +45,7 @@ module.exports = {
     })
   ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       loader: 'babel-loader',
       // loaders: ['happypack/loader?id=babel'], // todo

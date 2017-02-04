@@ -63,7 +63,7 @@ module.exports = {
     new ExtractTextPlugin('[name].[hash:4].css')
   ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
-    loaders: [{
+    rules: [{
       test: /\.jsx?$/,
       loader: 'babel-loader',
       // loader: 'happypack/loader?id=babel', // todo
