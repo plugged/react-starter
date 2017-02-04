@@ -10,7 +10,7 @@
 - [x] bundle analyzer
 - [x] build config
 - [x] public
-- [ ] structure<br><br>
+- [x] structure<br><br>
 - [ ] router
 - [ ] redux
 - [ ] jest

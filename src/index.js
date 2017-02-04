@@ -1,24 +1,23 @@
 import { AppContainer } from 'react-hot-loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import App from './containers/App';
 import './style/app.scss';
 
 const rootEl = document.getElementById('root');
-ReactDOM.render(
-  <AppContainer>
-    <App />
-  </AppContainer>,
-  rootEl
-);
+const render = () => {
+  ReactDOM.render(
+    <AppContainer>
+      <App />
+    </AppContainer>,
+    rootEl
+  );
+};
+
+render();
 
 if (module.hot) {
-  module.hot.accept('./App', () => {
-    ReactDOM.render(
-      <AppContainer>
-        <App />
-      </AppContainer>,
-      rootEl
-    );
+  module.hot.accept('./containers/App', () => {
+    render();
   });
 }

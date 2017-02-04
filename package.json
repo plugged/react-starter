@@ -7,6 +7,7 @@
     "start": "node server.js",
     "start:analyze": "node server.js",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "build": "yarn run clean:build && webpack --config webpack.build.js",
     "build:analyze": "yarn run clean:build && webpack --config webpack.build.js",
     "build:dll": "yarn run clean:dll && webpack --config webpack.dll.js",
@@ -25,6 +26,7 @@
     "react-dom": "^15.4.2",
     "react-hot-loader": "^3.0.0-beta.6",
     "react-redux": "^5.0.2",
+    "react-router": "^3.0.2",
     "redux": "^3.6.0"
   },
   "devDependencies": {
@@ -38,9 +40,9 @@
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.1",
     "eslint": "^3.15.0",
-    "eslint-config-airbnb": "^14.0.0",
+    "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
     "express": "^4.14.1",
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
