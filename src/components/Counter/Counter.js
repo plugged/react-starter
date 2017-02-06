@@ -22,7 +22,7 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <h2>Counter: {this.state.counter}<input type="text" /></h2>
+      <h1>Counter: {this.state.counter}</h1>
     );
   }
 }

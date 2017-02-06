@@ -9,6 +9,7 @@ module.exports = {
       'react-dom',
       'react-hot-loader',
       'react-redux',
+      'react-router-dom',
       'redux',
 
       'react-proxy',

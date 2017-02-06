@@ -34,6 +34,7 @@ module.exports = {
     'react/jsx-uses-vars': ERROR,
     'react/react-in-jsx-scope': ERROR,
     'react/jsx-filename-extension': OFF,
-    'react/self-closing-comp': OFF
+    'react/self-closing-comp': OFF,
+    'react/forbid-prop-types': OFF
   }
 }

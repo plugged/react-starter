@@ -11,6 +11,6 @@
 - [x] build config
 - [x] public
 - [x] structure<br><br>
-- [ ] router
+- [x] router
 - [ ] redux
 - [ ] jest
