@@ -5,7 +5,7 @@
 - [x] sass
 - [x] autoprefixer
 - [x] progress
-- [ ] happypack
+- [x] happypack
 - [x] dll
 - [x] bundle analyzer
 - [x] build config

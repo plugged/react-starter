@@ -66,7 +66,6 @@ module.exports = {
     rules: [{
       test: /\.jsx?$/,
       loader: 'babel-loader',
-      // loader: 'happypack/loader?id=babel', // todo
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
-// const HappyPack = require('happypack');
+const HappyPack = require('happypack');
 const vendorManifest = require('./src/dll/vendor-manifest.json');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
@@ -35,10 +35,10 @@ module.exports = {
         ],
       },
     }),
-    // new HappyPack({
-    //   id: 'babel',
-    //   loaders: ['babel-loader']
-    // }),
+    new HappyPack({
+      id: 'babel',
+      loaders: ['babel-loader']
+    }),
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: vendorManifest
@@ -47,8 +47,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.jsx?$/,
-      loader: 'babel-loader',
-      // loaders: ['happypack/loader?id=babel'], // todo
+      loader: 'happypack/loader?id=babel',
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,
