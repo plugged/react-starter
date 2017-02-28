@@ -35,13 +35,17 @@ module.exports = {
         ],
       },
     }),
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: vendorManifest
+    }),
     new HappyPack({
       id: 'babel',
       loaders: ['babel-loader']
     }),
-    new webpack.DllReferencePlugin({
-      context: __dirname,
-      manifest: vendorManifest
+    new HappyPack({
+      id: 'styles',
+      loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
     })
   ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
@@ -52,7 +56,7 @@ module.exports = {
     }, {
       test: /\.scss$/,
       exclude: path.join(__dirname, 'src', 'app'),
-      loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
+      loader: 'happypack/loader?id=styles'
     }]
   }
 };

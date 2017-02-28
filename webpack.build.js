@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
+const HappyPack = require('happypack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -60,12 +61,16 @@ module.exports = {
         ],
       },
     }),
-    new ExtractTextPlugin('[name].[hash:4].css')
+    new ExtractTextPlugin('[name].[hash:4].css'),
+    new HappyPack({
+      id: 'babel',
+      loaders: ['babel-loader']
+    })
   ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
     rules: [{
       test: /\.jsx?$/,
-      loader: 'babel-loader',
+      loader: 'happypack/loader?id=babel',
       include: path.join(__dirname, 'src')
     }, {
       test: /\.scss$/,
