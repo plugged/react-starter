@@ -13,4 +13,5 @@
 - [x] structure<br><br>
 - [x] router
 - [ ] redux
+- [ ] redux-devtools (?)
 - [ ] jest
