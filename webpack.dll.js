@@ -1,17 +1,12 @@
 const path = require('path');
 const webpack = require('webpack');
+const vendors = require('./webpack.vendors');
 
 module.exports = {
   devtool: 'source-map',
   entry: {
     vendor: [
-      'react',
-      'react-dom',
-      'react-hot-loader',
-      'react-redux',
-      'react-router-dom',
-      'redux',
-
+      ...vendors,
       'react-proxy',
       'html-entities',
       'ansi-html',

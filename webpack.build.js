@@ -4,7 +4,10 @@ const autoprefixer = require('autoprefixer');
 const HappyPack = require('happypack');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const vendors = require('./webpack.vendors');
 
 const ENV = process.env.npm_lifecycle_event;
 const runAnalyzer = ENV.includes('analyze');
@@ -13,7 +16,7 @@ module.exports = {
   devtool: 'source-map',
   entry: {
     application: './src/index',
-    vendor: ['react', 'react-dom', 'react-redux', 'redux']
+    vendor: vendors
   },
   output: {
     path: path.resolve(__dirname, 'build'),
@@ -62,6 +65,26 @@ module.exports = {
       },
     }),
     new ExtractTextPlugin('[name].[hash:4].css'),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'index.html'),
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        minifyJS: true,
+        minifyCSS: true
+      }
+    }),
+    new CompressionPlugin({
+      asset: '[path].gz[query]',
+      algorithm: 'zopfli',
+      test: /\.js$|\.css$/,
+      threshold: 10240,
+      minRatio: 0.8
+    }),
     new HappyPack({
       id: 'babel',
       loaders: ['babel-loader']
