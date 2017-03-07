@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
 const HappyPack = require('happypack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vendorManifest = require('./src/dll/vendor-manifest.json');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
@@ -38,6 +39,11 @@ module.exports = {
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: vendorManifest
+    }),
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, 'src', 'index.html'),
+      isProd: false,
+      inject: false
     }),
     new HappyPack({
       id: 'babel',

@@ -67,6 +67,7 @@ module.exports = {
     new ExtractTextPlugin('[name].[hash:4].css'),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'src', 'index.html'),
+      isProd: true,
       minify: {
         removeComments: true,
         collapseWhitespace: true,
