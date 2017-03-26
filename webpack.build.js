@@ -28,9 +28,7 @@ module.exports = {
       {from: 'public'}
     ]),
     new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('production')
-      }
+      'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.optimize.OccurrenceOrderPlugin(true),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),

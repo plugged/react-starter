@@ -5,5 +5,6 @@ module.exports = [
   'react-hot-loader',
   'react-redux',
   'react-router-dom',
+  'react-router-redux',
   'redux'
 ];
