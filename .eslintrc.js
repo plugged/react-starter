@@ -23,6 +23,7 @@ module.exports = {
   ],
   rules: {
     'comma-dangle': OFF,
+    'global-require': OFF,
     'quotes': [ERROR, 'single', {avoidEscape: true, allowTemplateLiterals: true }],
     'strict': [ERROR, 'never'],
     'indent': [ERROR, 2, {'SwitchCase': 1}],
