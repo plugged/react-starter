@@ -1,4 +1,5 @@
 /* eslint no-console: "off" */
+/* eslint consistent-return: "off"*/
 
 const path = require('path');
 const webpack = require('webpack');
@@ -27,8 +28,16 @@ app.get('/dll/:filename', (req, res) => {
   res.sendFile(path.join(__dirname, 'src', 'dll', req.params.filename));
 });
 
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'src', 'index.html'));
+app.get('*', (req, res, next) => {
+  const filename = path.join(compiler.outputPath, 'index.html');
+  compiler.outputFileSystem.readFile(filename, (err, result) => {
+    if (err) {
+      return next(err);
+    }
+    res.set('content-type', 'text/html');
+    res.send(result);
+    res.end();
+  });
 });
 
 app.listen(3000, (err) => {
