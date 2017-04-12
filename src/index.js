@@ -11,17 +11,8 @@ import App from './components/App';
 import './style/app.scss';
 
 const history = createHistory();
-const initialState = {
-  router: {
-    location: {
-      pathname: '/about',
-      search: '',
-      hash: '',
-      key: 'a5pd3c'
-    }
-  }
-};
-const store = configureStore({initialState}, history);
+const initialState = {};
+const store = configureStore(initialState, history);
 
 const rootEl = document.getElementById('root');
 const render = () => {
