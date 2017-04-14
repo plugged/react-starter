@@ -11,14 +11,16 @@ const config = require('./webpack.config');
 const app = express();
 const compiler = webpack(config);
 
-app.use(devMiddleware(compiler, {
-  publicPath: '/',
-  historyApiFallback: true,
-  contentBase: path.join(__dirname, 'src'),
-  stats: {
-    colors: true
-  }
-}));
+app.use(
+  devMiddleware(compiler, {
+    publicPath: '/',
+    historyApiFallback: true,
+    contentBase: path.join(__dirname, 'src'),
+    stats: {
+      colors: true
+    }
+  })
+);
 
 app.use(hotMiddleware(compiler));
 

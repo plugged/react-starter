@@ -31,10 +31,8 @@ module.exports = {
       debug: true,
       options: {
         context: __dirname,
-        postcss: [
-          autoprefixer({browsers: 'last 2 versions'}),
-        ],
-      },
+        postcss: [autoprefixer({ browsers: 'last 2 versions' })]
+      }
     }),
     new webpack.DllReferencePlugin({
       context: __dirname,
@@ -51,18 +49,26 @@ module.exports = {
     }),
     new HappyPack({
       id: 'styles',
-      loaders: ['style-loader', 'css-loader?sourceMap', 'postcss-loader', 'sass-loader?sourceMap']
+      loaders: [
+        'style-loader',
+        'css-loader?sourceMap',
+        'postcss-loader',
+        'sass-loader?sourceMap'
+      ]
     })
   ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      loader: 'happypack/loader?id=babel',
-      include: path.join(__dirname, 'src')
-    }, {
-      test: /\.scss$/,
-      exclude: path.join(__dirname, 'src', 'app'),
-      loader: 'happypack/loader?id=styles'
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: 'happypack/loader?id=babel',
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.scss$/,
+        exclude: path.join(__dirname, 'src', 'app'),
+        loader: 'happypack/loader?id=styles'
+      }
+    ]
   }
 };

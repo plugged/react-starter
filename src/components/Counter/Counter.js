@@ -21,8 +21,6 @@ export default class Counter extends Component {
   }
 
   render() {
-    return (
-      <h1>Counter: {this.state.counter}</h1>
-    );
+    return <h1>Counter: {this.state.counter}</h1>;
   }
 }

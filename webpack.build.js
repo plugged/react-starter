@@ -24,14 +24,15 @@ module.exports = {
     publicPath: '/'
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {from: 'public'}
-    ]),
+    new CopyWebpackPlugin([{ from: 'public' }]),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     }),
     new webpack.optimize.OccurrenceOrderPlugin(true),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor', minChunks: Infinity}),
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      minChunks: Infinity
+    }),
     new webpack.optimize.UglifyJsPlugin({
       mangle: {
         keep_fnames: true,
@@ -57,10 +58,8 @@ module.exports = {
       debug: false,
       options: {
         context: __dirname,
-        postcss: [
-          autoprefixer({browsers: 'last 2 versions'}),
-        ],
-      },
+        postcss: [autoprefixer({ browsers: 'last 2 versions' })]
+      }
     }),
     new ExtractTextPlugin('[name].[hash:4].css'),
     new HtmlWebpackPlugin({
@@ -90,17 +89,20 @@ module.exports = {
     })
   ].concat(runAnalyzer ? new BundleAnalyzerPlugin() : []),
   module: {
-    rules: [{
-      test: /\.jsx?$/,
-      loader: 'happypack/loader?id=babel',
-      include: path.join(__dirname, 'src')
-    }, {
-      test: /\.scss$/,
-      exclude: path.join(__dirname, 'src', 'app'),
-      loader: ExtractTextPlugin.extract({
-        fallbackLoader: 'style-loader',
-        loader: 'css-loader?sourceMap!postcss-loader!sass-loader?sourceMap'
-      })
-    }]
+    rules: [
+      {
+        test: /\.jsx?$/,
+        loader: 'happypack/loader?id=babel',
+        include: path.join(__dirname, 'src')
+      },
+      {
+        test: /\.scss$/,
+        exclude: path.join(__dirname, 'src', 'app'),
+        loader: ExtractTextPlugin.extract({
+          fallbackLoader: 'style-loader',
+          loader: 'css-loader?sourceMap!postcss-loader!sass-loader?sourceMap'
+        })
+      }
+    ]
   }
 };
