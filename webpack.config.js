@@ -10,6 +10,9 @@ const ENV = process.env.npm_lifecycle_event;
 const runAnalyzer = ENV.includes('analyze');
 
 module.exports = {
+  resolve: {
+    modules: ['src', 'node_modules']
+  },
   devtool: 'cheap-module-eval-source-map',
   entry: ['react-hot-loader/patch', 'webpack-hot-middleware/client', './src/index'],
   output: {

@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
-import counter from './reducers/counterReducer';
+
+import counter from 'reducers/counterReducer';
 
 export default function configureStore(initialState = {}, history) {
   const middleware = routerMiddleware(history);

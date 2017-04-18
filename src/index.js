@@ -1,14 +1,13 @@
-import { AppContainer } from 'react-hot-loader';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import createHistory from 'history/createBrowserHistory';
+import { AppContainer } from 'react-hot-loader';
 import { ConnectedRouter } from 'react-router-redux';
 import { Provider } from 'react-redux';
 
-import configureStore from './store';
-import App from './components/App';
-import './style/app.scss';
+import configureStore from 'store/configureStore';
+import App from 'containers/App';
+import 'style/app.scss';
 
 const history = createHistory();
 const initialState = {};
@@ -31,7 +30,7 @@ const render = () => {
 render();
 
 if (module.hot) {
-  module.hot.accept('./components/App', () => {
+  module.hot.accept('containers/App', () => {
     render();
   });
 }

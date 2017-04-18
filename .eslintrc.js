@@ -21,6 +21,13 @@ module.exports = {
      'jsx-a11y'
 
   ],
+  settings: {
+    'import/resolver': {
+      node: {
+        moduleDirectory: ['node_modules', 'src']
+      }
+    }
+  },
   rules: {
     'comma-dangle': OFF,
     'quotes': [ERROR, 'single', {avoidEscape: true, allowTemplateLiterals: true }],
