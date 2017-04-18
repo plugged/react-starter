@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
@@ -8,7 +8,7 @@ import { increment } from 'actions/counterActions';
   state => ({ count: state.counter.count }),
   dispatch => ({ increment: () => dispatch(increment()) })
 )
-export default class Counter extends Component {
+class Counter extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { counter: props.count };
@@ -35,3 +35,5 @@ Counter.propTypes = {
   count: PropTypes.number,
   increment: PropTypes.func
 };
+
+export default Counter;
