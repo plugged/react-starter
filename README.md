@@ -15,4 +15,4 @@
 - [ ] redux
 - [x] redux devtools extension (?)
 - [ ] jest
-- [ ] prettier
+- [x] prettier
