@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 
+import { increment } from 'actions/counterActions';
+
+@connect(
+  state => ({ count: state.counter.count }),
+  dispatch => ({ increment: () => dispatch(increment()) })
+)
 export default class Counter extends Component {
   constructor(props) {
     super(props);
-    this.state = { counter: 0 };
+    this.state = { counter: props.count };
   }
 
   componentDidMount() {
@@ -15,12 +23,15 @@ export default class Counter extends Component {
   }
 
   tick() {
-    this.setState({
-      counter: this.state.counter + 1
-    });
+    this.props.increment();
   }
 
   render() {
-    return <h1>Counter: {this.state.counter}</h1>;
+    return <h1>Counter: {this.props.count}</h1>;
   }
 }
+
+Counter.propTypes = {
+  count: PropTypes.number,
+  increment: PropTypes.func
+};

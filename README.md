@@ -12,7 +12,7 @@
 - [x] public
 - [x] structure<br><br>
 - [x] router
-- [ ] redux
+- [x] redux
 - [x] redux devtools extension (?)
 - [ ] jest
 - [x] prettier
