@@ -13,6 +13,9 @@ const ENV = process.env.npm_lifecycle_event;
 const runAnalyzer = ENV.includes('analyze');
 
 module.exports = {
+  resolve: {
+    modules: ['src', 'node_modules']
+  },
   devtool: 'source-map',
   entry: {
     application: './src/index',
