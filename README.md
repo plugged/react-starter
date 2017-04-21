@@ -16,3 +16,4 @@
 - [x] redux devtools extension (?)
 - [ ] jest
 - [x] prettier
+- [ ] redux-thunk
