@@ -9,11 +9,6 @@ import { increment } from 'actions/counterActions';
   dispatch => ({ increment: () => dispatch(increment()) })
 )
 class Counter extends React.PureComponent {
-  constructor(props) {
-    super(props);
-    this.state = { counter: props.count };
-  }
-
   componentDidMount() {
     this.interval = setInterval(this.tick.bind(this), 1000);
   }
