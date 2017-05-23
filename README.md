@@ -10,10 +10,11 @@
 - [x] bundle analyzer
 - [x] build config
 - [x] public
+- [ ] webpack-dashboard
 - [x] structure<br><br>
 - [x] router
 - [x] redux
-- [x] redux devtools extension (?)
+- [x] redux devtools extension
 - [ ] jest
 - [x] prettier
 - [ ] redux-thunk
