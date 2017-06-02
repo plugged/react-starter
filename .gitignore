@@ -6,5 +6,5 @@ node_modules
 .vscode
 *.css
 *.css.map
-.happypack
+.cache-loader
 src/dll

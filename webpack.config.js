@@ -64,13 +64,13 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: 'happypack/loader?id=babel',
+        use: ['cache-loader', 'happypack/loader?id=babel'],
         include: path.join(__dirname, 'src')
       },
       {
         test: /\.scss$/,
         exclude: path.join(__dirname, 'src', 'app'),
-        use: 'happypack/loader?id=styles'
+        use: ['cache-loader', 'happypack/loader?id=styles']
       }
     ]
   }
