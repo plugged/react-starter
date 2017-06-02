@@ -95,15 +95,15 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'happypack/loader?id=babel',
+        use: 'happypack/loader?id=babel',
         include: path.join(__dirname, 'src')
       },
       {
         test: /\.scss$/,
         exclude: path.join(__dirname, 'src', 'app'),
-        loader: ExtractTextPlugin.extract({
-          fallbackLoader: 'style-loader',
-          loader: 'css-loader?sourceMap!postcss-loader!sass-loader?sourceMap'
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader?sourceMap',
+          use: 'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap'
         })
       }
     ]

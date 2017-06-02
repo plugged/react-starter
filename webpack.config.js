@@ -53,9 +53,9 @@ module.exports = {
     new HappyPack({
       id: 'styles',
       loaders: [
-        'style-loader',
+        'style-loader?sourceMap',
         'css-loader?sourceMap',
-        'postcss-loader',
+        'postcss-loader?sourceMap',
         'sass-loader?sourceMap'
       ]
     })
@@ -64,13 +64,13 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        loader: 'happypack/loader?id=babel',
+        use: 'happypack/loader?id=babel',
         include: path.join(__dirname, 'src')
       },
       {
         test: /\.scss$/,
         exclude: path.join(__dirname, 'src', 'app'),
-        loader: 'happypack/loader?id=styles'
+        use: 'happypack/loader?id=styles'
       }
     ]
   }
