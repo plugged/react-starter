@@ -3,10 +3,9 @@ import React from 'react';
 import Layout from 'components/Layout';
 import Routes from 'routes';
 
-const App = () => (
-  <Layout>
+const App = () =>
+  (<Layout>
     <Routes />
-  </Layout>
-);
+  </Layout>);
 
 export default App;

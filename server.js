@@ -1,6 +1,6 @@
 /* eslint no-console: "off" */
 /* eslint consistent-return: "off"*/
-
+const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
 const webpack = require('webpack');
 const express = require('express');
@@ -10,6 +10,7 @@ const config = require('./webpack.config');
 
 const app = express();
 const compiler = webpack(config);
+compiler.apply(new DashboardPlugin());
 
 app.use(
   devMiddleware(compiler, {

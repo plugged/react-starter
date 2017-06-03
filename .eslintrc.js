@@ -33,7 +33,7 @@ module.exports = {
     'quotes': [ERROR, 'single', {avoidEscape: true, allowTemplateLiterals: true }],
     'strict': [ERROR, 'never'],
     'indent': [ERROR, 2, {'SwitchCase': 1}],
-    'object-curly-spacing': OFF,
+    //object-curly-spacing': OFF,
     'no-case-declarations': OFF,
     'import/no-extraneous-dependencies': OFF,
     'import/prefer-default-export': OFF,

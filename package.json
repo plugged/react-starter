@@ -5,6 +5,7 @@
   "scripts": {
     "postinstall": "yarn run build:dll",
     "start": "node server.js",
+    "start:dashboard": "webpack-dashboard -- node server.js",
     "start:analyze": "node server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -64,6 +65,7 @@
     "style-loader": "^0.18.1",
     "webpack": "^2.6.1",
     "webpack-bundle-analyzer": "^2.8.2",
+    "webpack-dashboard": "^0.4.0",
     "webpack-dev-middleware": "^1.10.2",
     "webpack-hot-middleware": "^2.18.0"
   }
