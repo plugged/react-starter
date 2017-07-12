@@ -42,6 +42,7 @@ module.exports = {
     'react/prefer-stateless-function': OFF,
     'react/jsx-uses-react': ERROR,
     'react/jsx-uses-vars': ERROR,
+    'react/jsx-wrap-multilines': OFF,
     'react/react-in-jsx-scope': ERROR,
     'react/jsx-filename-extension': OFF,
     'react/self-closing-comp': OFF,
