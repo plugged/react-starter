@@ -11,10 +11,11 @@
 - [x] build config
 - [x] public
 - [x] webpack-dashboard
+- [x] prettier
+- [ ] eslint-config-react-app
 - [x] structure<br><br>
 - [x] router
 - [x] redux
 - [x] redux devtools extension
 - [ ] jest
-- [x] prettier
 - [ ] redux-thunk
