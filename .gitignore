@@ -7,4 +7,5 @@ node_modules
 *.css
 *.css.map
 .cache-loader
+.happypack
 src/dll
