@@ -103,7 +103,8 @@ module.exports = {
         exclude: path.join(__dirname, 'src', 'app'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader?sourceMap',
-          use: 'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap'
+          use:
+            'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap'
         })
       }
     ]

@@ -22,7 +22,11 @@ class Counter extends React.PureComponent {
   }
 
   render() {
-    return <h1>Counter: {this.props.count}</h1>;
+    return (
+      <h1>
+        Counter: {this.props.count}
+      </h1>
+    );
   }
 }
 

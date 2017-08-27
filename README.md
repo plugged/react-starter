@@ -12,7 +12,7 @@
 - [x] public
 - [x] webpack-dashboard
 - [x] prettier
-- [ ] eslint-config-react-app
+- [x] eslint-config-react-app
 - [x] structure<br><br>
 - [x] router
 - [x] redux

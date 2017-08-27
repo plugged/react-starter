@@ -14,7 +14,11 @@ module.exports = {
     modules: ['src', 'node_modules']
   },
   devtool: 'cheap-module-eval-source-map',
-  entry: ['react-hot-loader/patch', 'webpack-hot-middleware/client', './src/index'],
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-hot-middleware/client',
+    './src/index'
+  ],
   output: {
     path: path.resolve(__dirname, 'src'),
     filename: 'bundle.js',
