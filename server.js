@@ -1,5 +1,8 @@
 /* eslint no-console: "off" */
-/* eslint consistent-return: "off"*/
+/* eslint consistent-return: "off" */
+/* eslint-env node */
+/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
+
 const DashboardPlugin = require('webpack-dashboard/plugin');
 const path = require('path');
 const webpack = require('webpack');
@@ -12,16 +15,14 @@ const app = express();
 const compiler = webpack(config);
 compiler.apply(new DashboardPlugin());
 
-app.use(
-  devMiddleware(compiler, {
-    publicPath: '/',
-    historyApiFallback: true,
-    contentBase: path.join(__dirname, 'src'),
-    stats: {
-      colors: true
-    }
-  })
-);
+app.use(devMiddleware(compiler, {
+  publicPath: '/',
+  historyApiFallback: true,
+  contentBase: path.join(__dirname, 'src'),
+  stats: {
+    colors: true
+  }
+}));
 
 app.use(hotMiddleware(compiler));
 
@@ -43,7 +44,7 @@ app.get('*', (req, res, next) => {
   });
 });
 
-app.listen(3000, err => {
+app.listen(3000, (err) => {
   if (err) {
     console.error(err);
   } else {

@@ -22,17 +22,13 @@ class Counter extends React.PureComponent {
   }
 
   render() {
-    return (
-      <h1>
-        Counter: {this.props.count}
-      </h1>
-    );
+    return <h1>Counter: {this.props.count}</h1>;
   }
 }
 
 Counter.propTypes = {
-  count: PropTypes.number,
-  increment: PropTypes.func
+  count: PropTypes.number.isRequired,
+  increment: PropTypes.func.isRequired
 };
 
 export default Counter;

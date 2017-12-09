@@ -1,3 +1,4 @@
+/* eslint-env node */
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
@@ -6,19 +7,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vendorManifest = require('./src/dll/vendor-manifest.json');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const ENV = process.env.npm_lifecycle_event;
-const runAnalyzer = ENV.includes('analyze');
+const ENV = process && process.env && process.env.npm_lifecycle_event;
+const runAnalyzer = ENV && ENV.includes('analyze');
 
 module.exports = {
   resolve: {
     modules: ['src', 'node_modules']
   },
   devtool: 'cheap-module-eval-source-map',
-  entry: [
-    'react-hot-loader/patch',
-    'webpack-hot-middleware/client',
-    './src/index'
-  ],
+  entry: ['react-hot-loader/patch', 'webpack-hot-middleware/client', './src/index'],
   output: {
     path: path.resolve(__dirname, 'src'),
     filename: 'bundle.js',

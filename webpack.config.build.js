@@ -1,3 +1,4 @@
+/* eslint-env node */
 const path = require('path');
 const webpack = require('webpack');
 const autoprefixer = require('autoprefixer');
@@ -7,7 +8,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
-const vendors = require('./webpack.vendors');
+const vendors = require('./webpack.config.vendors');
 
 const ENV = process.env.npm_lifecycle_event;
 const runAnalyzer = ENV.includes('analyze');
@@ -103,8 +104,7 @@ module.exports = {
         exclude: path.join(__dirname, 'src', 'app'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader?sourceMap',
-          use:
-            'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap'
+          use: 'css-loader?sourceMap!postcss-loader?sourceMap!sass-loader?sourceMap'
         })
       }
     ]

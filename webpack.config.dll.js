@@ -1,6 +1,7 @@
+/* eslint-env node */
 const path = require('path');
 const webpack = require('webpack');
-const vendors = require('./webpack.vendors');
+const vendors = require('./webpack.config.vendors');
 
 module.exports = {
   devtool: 'source-map',
