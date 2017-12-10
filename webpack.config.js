@@ -7,8 +7,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const vendorManifest = require('./src/dll/vendor-manifest.json');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
-const ENV = process && process.env && process.env.npm_lifecycle_event;
-const runAnalyzer = ENV && ENV.includes('analyze');
+const ENV = process.env.npm_lifecycle_event || [];
+const runAnalyzer = ENV.includes('analyze');
 
 module.exports = {
   resolve: {

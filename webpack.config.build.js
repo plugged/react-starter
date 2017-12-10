@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const vendors = require('./webpack.config.vendors');
 
-const ENV = process.env.npm_lifecycle_event;
+const ENV = process.env.npm_lifecycle_event || [];
 const runAnalyzer = ENV.includes('analyze');
 
 module.exports = {
@@ -82,7 +82,6 @@ module.exports = {
     }),
     new CompressionPlugin({
       asset: '[path].gz[query]',
-      algorithm: 'zopfli',
       test: /\.js$|\.css$/,
       threshold: 10240,
       minRatio: 0.8
